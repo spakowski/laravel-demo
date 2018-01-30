@@ -12,7 +12,7 @@
 */
 
 
-//dd(resolve('App\Billing\Stripe'));
+dd(resolve('App\Billing\Stripe'));
 //$stripe=App::make('App\Billing\Stripe');
 
 Route::get('/', function () {
