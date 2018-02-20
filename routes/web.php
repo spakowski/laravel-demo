@@ -12,7 +12,7 @@
 */
 
 
-dd(resolve('App\Billing\Stripe'));
+//dd(resolve('App\Billing\Stripe'));
 //$stripe=App::make('App\Billing\Stripe');
 
 Route::get('/', function () {
@@ -27,6 +27,8 @@ Route::get('/tasks/{task}', 'TasksController@show');
 
 Route::get('/post', 'PostController@index');
 Route::post('/post', 'PostController@store');
+
+Route::get('/post/tags/{tag}','TagsController@index');
 
 Route::get('/post/create', 'PostController@create');
 Route::get('/post/{post}', 'PostController@show');

@@ -3,7 +3,9 @@
 @section ('content')
   <div class="col-sm-8 blog-main">
     <h1>{{$post->title}}</h1>
-
+    @if (count($post->tags))
+      <p>Tags: @foreach ($post->tags as $tag) <a href="/post/tags/{{$tag->name}}">{{$tag->name}}</a> @endforeach</p>
+    @endif
     {{$post->body}}
 
     <a href="/post">BACK</a>

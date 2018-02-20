@@ -25,6 +25,12 @@
 
       @include ('layout.title')
 
+      <div id=""flash-message class="alert alert-success" role="alert">
+      @if ($flash=session('message'))
+          {{$flash}}
+    @endif
+  </div>
+
     </header>
 
     <main role="main" class="container">

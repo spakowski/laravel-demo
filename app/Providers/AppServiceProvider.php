@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('layout.sidebar', function ($view)
         {
           $view->with('archives', \App\Post::archives() );
+          $view->with('tags', \App\Tag::pluck('name')->sortByDesc('name'));
         });
     }
 

@@ -51,7 +51,7 @@ class PostController extends Controller
       $post->save();
 
       //redirect to the HP
-
+      session()->flash('message', 'Post veröffentlicht!');
       return redirect('/');
     }
 
