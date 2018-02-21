@@ -43,9 +43,7 @@ class PostController extends Controller
         'body' => 'required'
       ]);
       //Create a new Post using the request data
-    
       $post = new \App\Post;
-      $post->user_id = \Auth::id();
       $post->title = request ('title');
       $post->body = request ('body');
 
@@ -53,7 +51,7 @@ class PostController extends Controller
       $post->save();
 
       //redirect to the HP
-
+      session()->flash('message', 'Post veröffentlicht!');
       return redirect('/');
     }
 

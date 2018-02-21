@@ -14,8 +14,7 @@ class Post extends Model
 
     public function addComment($body)
       {
-        $user_id=\Auth::id();
-        $this->comments()->create(compact('body','user_id'));
+        $this->comments()->create(compact('body'));
       }
 
     public function user()
@@ -42,5 +41,10 @@ class Post extends Model
         ->orderByRaw('min(created_at) desc')
         ->get()
         ->toArray();
+    }
+
+    public function tags()
+    {
+      return $this->belongsToMany(Tag::class);
     }
 }
